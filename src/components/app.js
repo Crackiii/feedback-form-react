@@ -1,8 +1,14 @@
-import React from 'react';
+import React from 'react'
+import Feedbacks from './feedbacks/feedbacks'
+import Form from './form/form'
 
 const app = (props) => {
-    return <h1>Welcome Nadeem !</h1>
+    return (
+        <>
+            <Feedbacks />
+            <Form />
+        </>
+    )
 }
 
-
-export default app;
+export default app
