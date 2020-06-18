@@ -5,8 +5,8 @@ import Form from './form/form'
 const app = (props) => {
     return (
         <>
-            <Feedbacks />
             <Form />
+            <Feedbacks />
         </>
     )
 }

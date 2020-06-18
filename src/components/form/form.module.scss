@@ -1,0 +1,42 @@
+.Form{
+    background-color: rgba(0, 221, 0, 0.63);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+    .FormHead{
+        display: inline-block;
+        text-align: center;
+        text-transform: uppercase;
+        color: #009803;
+        letter-spacing: 3px;
+    }
+
+    .Form{
+        width: 500px;
+        height: auto;
+        margin: 0 auto;
+        padding: 50px;
+        background: none;
+        box-shadow: 0 100px 300px rgba(66, 119, 66, 0.28);
+        border-radius: 5px;
+
+        input, textarea{
+            padding: 15px 15px;
+            margin: 10px 0;
+            border: none;
+            background: #f5f5f5;
+            outline: none;
+            border-radius: 3px;
+            font-size: 18px;
+            font-family: 'MuseoModerno', cursive;
+        }
+
+        textarea{
+            height: 150px;
+            max-height: 200px;
+        }
+    }
+}

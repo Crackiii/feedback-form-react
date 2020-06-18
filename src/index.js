@@ -5,6 +5,7 @@ import App from './components/app'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import feedBackReducer from './reducers/feedback_reducers'
+import './index.scss'
 
 const store = createStore(feedBackReducer)
 
