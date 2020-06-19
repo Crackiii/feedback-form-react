@@ -22,6 +22,16 @@ const changeRating = (value, name, props) => {
 const formSubmit = (event, props) => {
     event.preventDefault()
     console.log(props.form)
+
+    fetch('http://localhost:3001/add_user', {
+        method: 'POST',
+        body: JSON.stringify({
+            ...props.form
+        }),
+        headers: { "Content-Type": "application/json" }
+    }).then(j => j.json())
+        .then(r => console.log(r))
+
 }
 
 const form = (props) => {
