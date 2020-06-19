@@ -1,12 +1,13 @@
 .Feedback {
+    background-color: #fff;
     width: 700px;
-    margin: 15px auto 15px auto;
+    margin: 30px auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     height: auto;
     border-radius: 30px;
-    box-shadow: 0 0 80px rgba($color: #000000, $alpha: 0.1);
+    // box-shadow: 0 0 80px rgba($color: #000000, $alpha: 0.1);
     padding: 20px;
 
     .FeedbackImg {
@@ -20,18 +21,28 @@
     }
 
     .User {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding-left: 20px;
 
-        .Username {
-            padding-bottom: 20px;
+        .NameRating {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .Username {
+                padding-bottom: 20px;
+            }
+
         }
 
         .Comment {
             font-weight: 300;
             font-size: 14px;
         }
+
+
     }
 }

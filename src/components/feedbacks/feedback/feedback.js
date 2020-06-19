@@ -1,19 +1,32 @@
 import React from 'react'
 import classes from './feedback.module.scss'
+import Rater from 'react-star-ratings';
 
 const feedback = (props) => {
     return (
-        <div className={classes.Feedback}>
-            <div className={classes.FeedbackImg}>
-                <img src={'https://i.ya-webdesign.com/images/funny-png-avatar-2.png'} />
-            </div>
-            <div className={classes.User}>
-                <div className={classes.Username}>Nadeem Ahmad</div>
-                <div className={classes.Comment}>
-                    I am a comment from Nadeem Ahmad Khan Swaty hehe !
+        props.data.map(feedback => {
+            return (
+                <div className={classes.Feedback} key={feedback.id}>
+                    <div className={classes.FeedbackImg}>
+                        <img src={feedback.avatar} />
                     </div>
-            </div>
-        </div>
+                    <div className={classes.User}>
+                        <div className={classes.NameRating}>
+                            <div className={classes.Username}>{feedback.name}</div>
+                            <Rater
+                                numberOfStars={5}
+                                rating={feedback.rating}
+                                starRatedColor={'gold'}
+                                starHoverColor={'gold'}
+                                starEmptyColor={'#d5d5d5'}
+                                starDimension={'20px'}
+                                starSpacing={'0px'} />
+                        </div>
+                        <div className={classes.Comment}>{feedback.message}</div>
+                    </div>
+                </div>
+            )
+        })
 
     )
 }
