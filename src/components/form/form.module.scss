@@ -1,5 +1,5 @@
 .Form{
-    background-color: rgba(0, 221, 0, 0.63);
+    background-color: #35dc9b;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +10,7 @@
         display: inline-block;
         text-align: center;
         text-transform: uppercase;
-        color: #009803;
+        color: #1a7451;
         letter-spacing: 3px;
     }
 
@@ -31,7 +31,16 @@
             outline: none;
             border-radius: 3px;
             font-size: 18px;
-            font-family: 'MuseoModerno', cursive;
+            font-family: 'Roboto Slab', serif;
+            transition: .4s;
+
+            &:focus{
+                background-color: #259e70;
+                color: #fff;
+            }
+            &:focus::placeholder{
+                color: #fff;
+            }
         }
 
         textarea{

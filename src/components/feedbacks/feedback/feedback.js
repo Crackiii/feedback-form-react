@@ -3,11 +3,18 @@ import classes from './feedback.module.scss'
 
 const feedback = (props) => {
     return (
-        <div className={classes.Background}>
-            {props.data.map((feedback, i) => {
-                return <h3 className={classes.Feedback} key={i} >Child - {feedback.message}</h3>
-            })}
+        <div className={classes.Feedback}>
+            <div className={classes.FeedbackImg}>
+                <img src={'https://i.ya-webdesign.com/images/funny-png-avatar-2.png'} />
+            </div>
+            <div className={classes.User}>
+                <div className={classes.Username}>Nadeem Ahmad</div>
+                <div className={classes.Comment}>
+                    I am a comment from Nadeem Ahmad Khan Swaty hehe !
+                    </div>
+            </div>
         </div>
+
     )
 }
 

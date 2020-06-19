@@ -14,10 +14,10 @@ const form = (props) => {
         <div className={classes.Form}>
             <div className={classes.FormHead}><h3 >GIVE YOUR FEEDBACK</h3></div>
             <form className={classes.Form}>
-                <input type='text' placeholder='Name' name='name' value={props.form.name} onChange={(event) => handleInput(event, props)} />
-                <input type='email' placeholder='Email' name='email' value={props.form.email} onChange={(event) => handleInput(event, props)} />
-                <input type='number' placeholder='Rating' name='rating' value={props.form.rating} onChange={(event) => handleInput(event, props)} />
-                <textarea type='text' placeholder='Comment' name='comment' value={props.form.comment} onChange={(event) => handleInput(event, props)} ></textarea>
+                <input type='text' placeholder='Name' name='name' value={props.form.name} onChange={(event) => handleInput(event, props)} autoComplete="false" />
+                <input type='email' placeholder='Email' name='email' value={props.form.email} onChange={(event) => handleInput(event, props)} autoComplete="false" />
+                <input type='number' placeholder='Rating' name='rating' value={props.form.rating} onChange={(event) => handleInput(event, props)} autoComplete="false" />
+                <textarea type='text' placeholder='Comment' name='comment' value={props.form.comment} onChange={(event) => handleInput(event, props)} autoComplete="false" ></textarea>
             </form >
         </div>
     )

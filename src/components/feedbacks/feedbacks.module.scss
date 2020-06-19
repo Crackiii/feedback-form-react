@@ -1,0 +1,32 @@
+.Background {
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    padding: 50px 0;
+
+    .FeedbackHead {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        text-transform: uppercase;
+        padding-bottom: 30px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        color: rgb(94, 94, 94);
+    }
+
+    .FeedbackWrapper {
+        width: 800px;
+        height: auto;
+        max-height: 500px;
+        margin: 0 auto;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+}
