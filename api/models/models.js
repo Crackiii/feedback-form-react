@@ -1,29 +1,16 @@
 const Sequelize = require('sequelize');
-
-const sequelize = new Sequelize('checkout', 'root', '', {
-    host: 'localhost',
-    dialect: 'mysql'
-});
-
-sequelize
-    .authenticate()
-    .then(() => {
-        console.log('Connection has been established successfully.');
-    })
-    .catch(err => {
-        console.error('Unable to connect to the database:', err);
-    });
-
+const { sequelize } = require('../db_connection')
 
 const Model = Sequelize.Model;
 
-class User extends Model{}
+//Creating User model
+class User extends Model { }
 User.init({
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-      },
+    },
     name: {
         type: Sequelize.STRING,
         defaultValue: "",
@@ -33,15 +20,17 @@ User.init({
         type: Sequelize.STRING,
         allowNull: false
     },
+    avatar: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
-},{ sequelize, modelName: 'user' })
-
-// User.sync({ alter: true })
+}, { sequelize, modelName: 'user' })
 
 
-
-class Feedback extends Model{}
+//Creating Feedback model
+class Feedback extends Model { }
 Feedback.init({
     id: {
         type: Sequelize.INTEGER,
@@ -63,11 +52,10 @@ Feedback.init({
     },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
-}, {sequelize, modelName: 'feedback'})
+}, { sequelize, modelName: 'feedback' })
 
-// Feedback.sync({alter: true})
+User.hasMany(Feedback, { foreignKey: 'ratedBy' })
+Feedback.belongsTo(User, { foreignKey: 'ratedBy' });
 
 
-
-
-module.exports = {User, Feedback}
+module.exports = { User, Feedback }

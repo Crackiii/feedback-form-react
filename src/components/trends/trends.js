@@ -49,8 +49,6 @@ const chartData = {
 }
 
 const trends = (props) => {
-    console.log(props)
-
     return (
         <div className={classes.Background}>
             <div className={classes.TrendsHead}>Daily Trends</div>

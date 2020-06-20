@@ -4,15 +4,15 @@ import Rater from 'react-star-ratings';
 
 const feedback = (props) => {
     return (
-        props.data.map(feedback => {
+        props.data.map((feedback, i) => {
             return (
-                <div className={classes.Feedback} key={feedback.id}>
+                <div className={classes.Feedback} key={i}>
                     <div className={classes.FeedbackImg}>
-                        <img src={feedback.avatar} />
+                        <img src={feedback.user.avatar} />
                     </div>
                     <div className={classes.User}>
                         <div className={classes.NameRating}>
-                            <div className={classes.Username}>{feedback.name}</div>
+                            <div className={classes.Username}>{feedback.user.name}</div>
                             <Rater
                                 numberOfStars={5}
                                 rating={feedback.rating}
@@ -22,7 +22,7 @@ const feedback = (props) => {
                                 starDimension={'20px'}
                                 starSpacing={'0px'} />
                         </div>
-                        <div className={classes.Comment}>{feedback.message}</div>
+                        <div className={classes.Comment}>{feedback.comment}</div>
                     </div>
                 </div>
             )
