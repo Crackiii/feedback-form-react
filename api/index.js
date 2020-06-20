@@ -3,21 +3,8 @@ const bodyParser = require('body-parser')
 const app = express()
 const cors = require('cors')
 const port = 3001
-const Sequelize = require('sequelize');
+const {User, Feedback} = require('./models/models')
 
-const sequelize = new Sequelize('database', 'root', '', {
-    host: 'localhost',
-    dialect: 'mysql'
-});
-
-sequelize
-    .authenticate()
-    .then(() => {
-        console.log('Connection has been established successfully.');
-    })
-    .catch(err => {
-        console.error('Unable to connect to the database:', err);
-    });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -26,9 +13,35 @@ app.use(bodyParser.urlencoded({
 app.use(cors())
 
 app.post("/add_user", (req, res) => {
+
+
+
+
+    User.create({
+        name: req.body.name,
+        email: req.body.email
+    }).then(res => {
+        console.log("RESPONSE --- ", res)
+    })
+
     res.send(req.body)
+
 })
 
+
+User.findOne({ where: {email: 'ahmad.nadim2012'} }).then(project => {
+    console.log(project.dataValues)
+  })
+
+
+
+// Feedback.create({
+//     comment: "Simle Comment",
+//     rating: 3,
+//     ratedBy: 1
+// }).then(res => {
+//     console.log(res)
+// })
 
 
 app.listen(port, () => { console.log("RUNNING SERVER...") })
