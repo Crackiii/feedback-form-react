@@ -13,9 +13,19 @@ export const __fetch = (route, method, payload) => {
         })
     }
 
-    return fetch(`${HOST}${route}`, options)
-        .then(j => j.json())
-        .then(r => Promise.resolve(r))
-        .catch(e => Promise.reject(e))
+    try {
+        return fetch(`${HOST}${route}`, options)
+            .then(j => {
+                if (j.ok) {
+                    return j.json()
+                } else {
+                    throw Error(j.statusText);
+                }
+            })
+            .then(r => Promise.resolve(r))
+            .catch(e => Promise.reject(e))
+    } catch (e) {
+        throw Error(e)
+    }
 
 }

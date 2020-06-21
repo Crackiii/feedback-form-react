@@ -1,8 +1,10 @@
 import React from 'react'
 import classes from './feedback.module.scss'
 import Rater from 'react-star-ratings';
+import { getDateTime } from './functions'
 
 const feedback = (props) => {
+
     return (
         props.data.length === 0 ? <h1 className={classes.NoFeedbacks}>No Feedbacks yet !</h1> :
 
@@ -25,6 +27,7 @@ const feedback = (props) => {
                                     starSpacing={'0px'} />
                             </div>
                             <div className={classes.Comment}>{feedback.comment}</div>
+                            <div className={classes.FeedbackTime}>{getDateTime(feedback.createdAt)}</div>
                         </div>
                     </div>
                 )

@@ -15,7 +15,7 @@ const Trends = (props) => {
     useEffect(() => {
         getFeedbacks(props)
         setChartOptions(props)
-    }, [props])
+    }, [])
     return (
         <div className={classes.Background}>
             <div className={classes.TrendsHead}>Daily Trends</div>

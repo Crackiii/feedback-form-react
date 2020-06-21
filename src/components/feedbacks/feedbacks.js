@@ -6,6 +6,7 @@ import { __fetch } from '../../services/fetch'
 
 const getFeedbacks = async (props) => {
     const feedbacks = await __fetch('/get_feedbacks', 'GET', null)
+    console.log(feedbacks)
     props.updateFeedbacks(feedbacks.reverse())
 }
 
@@ -13,7 +14,7 @@ const Feedbacks = (props) => {
 
     useEffect(() => {
         getFeedbacks(props)
-    }, [props])
+    }, [])
 
     return (
         <div className={classes.Background}>
