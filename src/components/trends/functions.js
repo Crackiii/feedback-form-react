@@ -1,4 +1,4 @@
-export const getDataSets = (feedbacks, props) => {
+const getDataSets = (feedbacks, props) => {
 
     let dates = feedbacks
         .map(f => new Date(f.createdAt).getDate()).sort()
@@ -13,14 +13,13 @@ export const getDataSets = (feedbacks, props) => {
         labels.push(obj._d)
         values.push(obj._o)
     })
-
     return {
         labels: labels,
         values: values
     }
 }
 
-export const setChartOptions = (props) => {
+const setChartOptions = (props) => {
     return {
         data: {
             labels: props.trends.labels,
@@ -65,3 +64,7 @@ export const setChartOptions = (props) => {
         }
     }
 }
+
+
+
+module.exports = { getDataSets, setChartOptions }

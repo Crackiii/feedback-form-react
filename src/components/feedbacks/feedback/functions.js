@@ -1,4 +1,4 @@
-export const getDateTime = (_date) => {
+const getDateTime = (_date) => {
 
     let date = new Date(_date).toDateString()
     let time = new Date(_date).toTimeString().split(" ")[0].split(":")
@@ -17,3 +17,5 @@ export const getDateTime = (_date) => {
     return `${date}, at ${hours}:${time[1]} ${ampm}`
 
 }
+
+module.exports = { getDateTime }
