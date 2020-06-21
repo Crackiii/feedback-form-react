@@ -1,9 +1,7 @@
 import { initialState } from '../state'
-import { act } from 'react-dom/test-utils'
 
 
 const feedbackReducer = (state = initialState, action) => {
-    console.log(action.type, action.data)
     switch (action.type) {
         case "UPDATE_FORM": {
             return {
@@ -32,8 +30,10 @@ const feedbackReducer = (state = initialState, action) => {
                 }
             }
         }
+        default: {
+            return { ...state }
+        }
     }
-    return state;
 }
 
 export default feedbackReducer;

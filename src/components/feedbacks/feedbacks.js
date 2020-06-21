@@ -13,7 +13,7 @@ const Feedbacks = (props) => {
 
     useEffect(() => {
         getFeedbacks(props)
-    }, [])
+    }, [props])
 
     return (
         <div className={classes.Background}>

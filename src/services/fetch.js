@@ -7,7 +7,7 @@ export const __fetch = (route, method, payload) => {
         headers: { "Content-Type": "application/json" }
     }
 
-    if (method.toLowerCase() == 'post') {
+    if (method.toLowerCase() === 'post') {
         options.body = JSON.stringify({
             ...payload
         })

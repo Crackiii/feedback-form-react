@@ -10,7 +10,7 @@ const feedback = (props) => {
                 return (
                     <div className={classes.Feedback} key={i}>
                         <div className={classes.FeedbackImg}>
-                            <img src={feedback.user.avatar} />
+                            <img src={feedback.user.avatar} alt={feedback.user.name} />
                         </div>
                         <div className={classes.User}>
                             <div className={classes.NameRating}>

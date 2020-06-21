@@ -6,3 +6,4 @@ User.sync({ alter: true })
 //Migrate the Feedback Model
 Feedback.sync({ alter: true })
 
+
