@@ -4,6 +4,10 @@ export let initialState = {
         name: '',
         email: '',
         rating: 0,
-        comment: ''
+        comment: '',
+    },
+    trends: {
+        labels: [],
+        values: []
     }
 }
