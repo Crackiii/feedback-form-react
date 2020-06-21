@@ -1,8 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About the project
 
-In the project directory, you can run:
+This project is developed as a task for checkout.com. It's a simple Feedbacks system. A user can input thier name, email, rating and comment. Right away the feedbacks list will be updated, along with the daily trends of the feedbacks which shows how many feedbacks are given every single day.
+
+## Techs and Tools
+
+This project is built over `Vanilla Javascript (with ES6+)` features, `React JS` for front end rendering along with `Redux` for state management, `SCSS` pre-processor has been used for styling and `CSS modules` feature is used, which dynamically assigns classnames to the `JSX (HTML)` elements. `Node JS` has been used on the backend, with `MySQL` database and `Sequelize ORM`. Few more third party libraries are used for a good hand on, which are `Sweetalert` for showing nice popups with messages, `React-Star-Rating` library which gives good rating flexibility. 
+
+## Configuration
+
+Clone the repo through `git clone repo-link`.
 
 ### `yarn start`
 
