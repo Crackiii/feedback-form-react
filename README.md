@@ -24,3 +24,13 @@ After everything is up and running, now you can signup and give your feedback, w
 
 Note: Once a user signup with a specific email (taken as unique key), then typing the feedback will only write to the `feedbacks` table and no changes will be made on the `users` table.</br>
 
+## Unit Tests
+
+For testing the functions as well as the components of the application. I have used `JEST`, and `react-testing-library`. Also, the `redux-store` caused an issue while testing the components, for that I have installed a third party library called `redux-mock-store` which mocks the store and pass it to the `<Provider/>` higher order component `HOC`, and that solves the problem.
+
+To run the test, just simply run the command `npm run test`. 
+
+
+## Building the application
+
+For building the application and making it ready to  deploy, just run `npm run build`
