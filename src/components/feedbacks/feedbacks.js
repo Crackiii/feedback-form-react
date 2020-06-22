@@ -20,7 +20,7 @@ const Feedbacks = (props) => {
         <div className={classes.Background}>
             {/* {props.data.map((feedback, i) => { */}
             {/* return ( */}
-            <div className={classes.FeedbackHead}>
+            <div className={classes.FeedbackHead} data-testid='head'>
                 Recent Comments
             </div>
             <div className={classes.FeedbackWrapper}>

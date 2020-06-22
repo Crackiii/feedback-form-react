@@ -1,16 +1,16 @@
-import { getDataSets } from '../trends/functions'
 import salert from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 import { __fetch } from '../../services/fetch'
+import { getDataSets } from '../trends/functions'
 
-export const handleInput = (event, props) => {
+const handleInput = (event, props) => {
     props.updateFormState({
         ...props.form,
         [event.target.name]: event.target.value
     })
 }
 
-export const changeRating = (value, name, props) => {
+const changeRating = (value, name, props) => {
     handleInput({
         target: {
             name: name,
@@ -19,25 +19,24 @@ export const changeRating = (value, name, props) => {
     }, props)
 }
 
-export const getFeedbacks = async (props) => {
+const getFeedbacks = async (props) => {
     const feedbacks = await __fetch('/get_feedbacks', 'GET', null)
     props.updateFeedbacks(feedbacks.reverse())
     props.updateTrends(getDataSets(feedbacks, props))
 }
 
-export const isValidForm = (props) => {
+const isValidForm = (props) => {
     return Object
         .values(props.form)
         .map(value => (value === '' || value === 0) ? false : true)
         .includes(false) ? false : true
 }
 
-export const formSubmit = async (event, props) => {
+const formSubmit = async (event, props) => {
 
     event.preventDefault()
     if (isValidForm(props)) {
         const r = await __fetch('/add_user', 'POST', props.form)
-
         if (r.success) {
             props.reset()
             getFeedbacks(props)
@@ -70,3 +69,15 @@ export const formSubmit = async (event, props) => {
         })
     }
 }
+
+const exportFunctions = {
+    handleInput,
+    changeRating,
+    getFeedbacks,
+    isValidForm,
+    formSubmit,
+    __fetch
+};
+
+
+export default exportFunctions

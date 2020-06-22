@@ -2,17 +2,17 @@ import React from 'react'
 import { connect } from 'react-redux'
 import classes from './form.module.scss'
 import Rater from 'react-star-ratings';
-import { handleInput, changeRating, formSubmit } from './functions'
+import handlers from './functions'
 
 
 
 const form = (props) => {
     return (
         <div className={classes.Form}>
-            <div className={classes.FormHead}><h3 >GIVE YOUR FEEDBACK</h3></div>
-            <form className={classes.Form} onSubmit={(event) => formSubmit(event, props)}>
-                <input type='text' placeholder='Name' name='name' value={props.form?.name} onChange={(event) => handleInput(event, props)} autoComplete="false" />
-                <input type='email' placeholder='Email' name='email' value={props.form?.email} onChange={(event) => handleInput(event, props)} autoComplete="false" />
+            <div className={classes.FormHead}><h3 data-testid='form-head'>GIVE YOUR FEEDBACK</h3></div>
+            <form className={classes.Form} onSubmit={(event) => handlers.formSubmit(event, props)}>
+                <input type='text' placeholder='Name' name='name' value={props.form?.name} onChange={(event) => handlers.handleInput(event, props)} autoComplete="false" />
+                <input type='email' placeholder='Email' name='email' value={props.form?.email} onChange={(event) => handlers.handleInput(event, props)} autoComplete="false" />
                 {/* <input type='hidden' name='rating' value={props.form.rating} /> */}
                 <div className={classes.RaterWrap}>
                     <div className={classes.RaterText}>Rating</div>
@@ -27,10 +27,10 @@ const form = (props) => {
                         hoverMode={true}
                         starDimension={'25px'}
                         starSpacing={'0px'}
-                        changeRating={(v, n) => changeRating(v, n, props)} />
+                        changeRating={(v, n) => handlers.changeRating(v, n, props)} />
                     <div className={classes.RaterText}>( {props.form?.rating} )</div>
                 </div>
-                <textarea type='text' placeholder='Comment' name='comment' value={props.form?.comment} onChange={(event) => handleInput(event, props)} autoComplete="false" ></textarea>
+                <textarea type='text' placeholder='Comment' name='comment' value={props.form?.comment} onChange={(event) => handlers.handleInput(event, props)} autoComplete="false" ></textarea>
                 <button className={classes.FormButton}>Submit</button>
             </form >
         </div>

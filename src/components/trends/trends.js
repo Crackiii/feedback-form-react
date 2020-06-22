@@ -18,7 +18,7 @@ const Trends = (props) => {
     }, [])
     return (
         <div className={classes.Background}>
-            <div className={classes.TrendsHead}>Daily Trends</div>
+            <div className={classes.TrendsHead} data-testid='trend-head'>Daily Trends</div>
             <div className={classes.ChartWrapper}>
                 <Line width={60} height={27} data={setChartOptions(props).data} options={setChartOptions(props).options} />
             </div>
