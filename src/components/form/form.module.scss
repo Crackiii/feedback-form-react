@@ -1,4 +1,4 @@
-.Form {
+.FormBG {
     background-color: #35dc9b;
     display: flex;
     flex-direction: column;
@@ -34,6 +34,7 @@
             font-size: 18px;
             font-family: 'Roboto Slab', serif;
             transition: .4s;
+            width: 100%;
 
             &:focus {
                 background-color: #259e70;

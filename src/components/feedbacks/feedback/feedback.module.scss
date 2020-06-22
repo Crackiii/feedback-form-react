@@ -60,3 +60,29 @@
 
     }
 }
+
+@media only screen and (max-width: 786px) {
+    .Feedback {
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 738px) {
+    .Feedback {
+        width: 550px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .Feedback {
+        width: 500px;
+        margin: 30px 70px;
+    }
+}
+
+@media only screen and (max-width: 588px) {
+    .Feedback {
+        width: 450px;
+        margin: 30px 40px;
+    }
+}

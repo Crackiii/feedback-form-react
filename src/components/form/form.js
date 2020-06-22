@@ -8,7 +8,7 @@ import handlers from './functions'
 
 const form = (props) => {
     return (
-        <div className={classes.Form}>
+        <div className={classes.FormBG}>
             <div className={classes.FormHead}><h3 data-testid='form-head'>GIVE YOUR FEEDBACK</h3></div>
             <form className={classes.Form} onSubmit={(event) => handlers.formSubmit(event, props)}>
                 <input type='text' placeholder='Name' name='name' value={props.form?.name} onChange={(event) => handlers.handleInput(event, props)} autoComplete="false" />
