@@ -12,15 +12,17 @@ const getFeedbacks = async (props) => {
 }
 
 const Trends = (props) => {
+
     useEffect(() => {
         getFeedbacks(props)
         setChartOptions(props)
     }, [])
+
     return (
         <div className={classes.Background}>
             <div className={classes.TrendsHead} data-testid='trend-head'>Daily Trends</div>
             <div className={classes.ChartWrapper}>
-                <Line width={60} height={27} data={setChartOptions(props).data} options={setChartOptions(props).options} />
+                <Line width={600} height={270} data={setChartOptions(props).data} options={setChartOptions(props).options} />
             </div>
         </div>
     )
