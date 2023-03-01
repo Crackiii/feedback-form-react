@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## About the project
 
-This project is developed as a task for checkout.com. It's a simple Feedbacks system. A user can input thier name, email, rating and comment. Right away the feedbacks list will be updated, along with the daily trends of the feedbacks which shows how many feedbacks are given every single day.
+A user can input thier name, email, rating and comment. Right away the feedbacks list will be updated, along with the daily trends of the feedbacks which shows how many feedbacks are given every single day.
 
 ## Techs and Tools
 
